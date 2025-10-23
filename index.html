@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soran Mall Building - سوران مال</title>
+  <meta name="description" content="پیمانکاری، تأمین مصالح و پروژه‌های انرژی خورشیدی - سوران مال" />
+  <style>
+    /* Mobile-first minimal CSS */
+    :root{
+      --bg:#0F1720;
+      --gold:#C8A14B;
+      --deep:#1E2A34;
+      --purple:#3B2E4A;
+      --muted:#E6E6E6;
+      --card:#071018;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--muted);font-family:Tahoma,Arial,Helvetica,sans-serif;direction:rtl}
+    .container{max-width:900px;margin:0 auto;padding:18px}
+    header{display:flex;align-items:center;gap:12px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:56px;height:56px;object-fit:cover;border-radius:10px;border:2px solid rgba(200,161,75,0.12)}
+    h1{margin:0;font-size:18px;color:var(--muted);letter-spacing:0.6px}
+    .subtitle{font-size:12px;color:#9aa4ad;margin-top:2px}
+    .hero{margin-top:18px;background:linear-gradient(180deg,var(--deep),var(--purple));padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .hero h2{margin:0;font-size:20px;color:var(--gold)}
+    .hero p{margin-top:8px;color:#d0d6d9;font-size:13px;line-height:1.5}
+    .btns{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none}
+    .btn-cta{background:var(--gold);color:var(--deep)}
+    .btn-light{border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    section{margin-top:18px}
+    h3{margin:0 0 10px 0;font-size:16px;color:var(--muted)}
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .card{background:var(--card);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .card h4{margin:0;font-size:14px;color:var(--gold)}
+    .card p{margin:6px 0 0 0;font-size:12px;color:#bfc7cb}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .project img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+    footer{margin-top:22px;padding:12px;border-top:1px solid rgba(255,255,255,0.02);font-size:13px;color:#9aa4ad}
+    .contact-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .muted{color:#9aa4ad}
+    /* Responsive tweaks */
+    @media(min-width:720px){
+      .hero h2{font-size:28px}
+      .services{grid-template-columns:repeat(3,1fr)}
+      .projects{grid-template-columns:repeat(3,1fr)}
+      .container{padding:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- logo -->
+        <img src='logo.jpg' alt='Soran Mall'/>
+        <div>
+          <h1>SORAN MALL BUILDING</h1>
+          <div class="subtitle">پیمانکاری - تأمین مصالح - انرژی خورشیدی</div>
+        </div>
+      </div>
+      <div style="text-align:left">
+        <a class="btn btn-light" href="https://wa.me/989185229269" target="_blank">📞 واتساپ</a>
+      </div>
+    </header>
+
+    <div class="hero" role="region" aria-label="معرفی">
+      <h2>از ساخت تا انرژی — <span style="color:var(--muted)">همه زیر یک سقف</span></h2>
+      <p>سوران مال، ارائه‌دهنده خدمات کامل ساختمانی، صنعتی و پروژه‌های انرژی پاک. طراحی، تأمین مصالح و اجرای سیستم‌های خورشیدی با تیم مجرب.</p>
+      <div class="btns">
+        <a class="btn btn-cta" href="https://wa.me/989185229269" target="_blank">درخواست مشاوره</a>
+        <a class="btn btn-light" href="https://instagram.com/soran.mall_building" target="_blank">اینستاگرام</a>
+      </div>
+    </div>
+
+    <section id="services">
+      <h3>خدمات ما</h3>
+      <div class="services">
+        <div class="card">
+          <h4>پیمانکاری کامل ساختمانی</h4>
+          <p>از خاک‌برداری تا تحویل کلید — اجرای اسکلت، بتن، نازک‌کاری و سازه.</p>
+        </div>
+        <div class="card">
+          <h4>تأمین مصالح و تجهیزات</h4>
+          <p>سیمان، میلگرد، کاشی، رنگ و تجهیزات با ضمانت کیفیت و تامین سریع.</p>
+        </div>
+        <div class="card">
+          <h4>پروژه‌های انرژی خورشیدی</h4>
+          <p>طراحی، نصب و نگهداری سیستم‌های پنل خورشیدی خانگی و صنعتی.</p>
+        </div>
+        <div class="card">
+          <h4>پروژه‌های صنعتی و تجاری</h4>
+          <p>اجرای سازه‌های فلزی و پروژه‌های تجاری با برنامه‌ریزی دقیق.</p>
+        </div>
+        <div class="card">
+          <h4>مشاوره و طراحی فنی</h4>
+          <p>نقشه‌کشی، برآورد هزینه و زمان‌بندی پروژه.</p>
+        </div>
+        <div class="card">
+          <h4>نگهداری و پشتیبانی</h4>
+          <p>بازدید دوره‌ای و تعمیرات پس از اجرا برای تضمین عملکرد پروژه‌ها.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h3>نمونه پروژه‌ها</h3>
+      <p class="muted" style="margin:6px 0 10px 0;font-size:13px">عکس پروژه‌ها را از بخش مدیریت در آینده اضافه کنید.</p>
+      <div class="projects">
+        <div class="project card"><img src="logo.jpg" alt="پروژه نمونه ۱"><div style="margin-top:8px"><strong>پروژه نمونه ۱</strong><div class="muted" style="font-size:12px">بازسازی</div></div></div>
+        <div class="project card"><img src="logo.jpg" alt="پروژه نمونه ۲"><div style="margin-top:8px"><strong>پروژه نمونه ۲</strong><div class="muted" style="font-size:12px">نصب خورشیدی</div></div></div>
+        <div class="project card"><img src="logo.jpg" alt="پروژه نمونه ۳"><div style="margin-top:8px"><strong>پروژه نمونه ۳</strong><div class="muted" style="font-size:12px">تأمین مصالح</div></div></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h3>درباره ما</h3>
+      <p class="muted">شرکت سوران مال در سنندج واقع است و خدمات پیمانکاری، تأمین مصالح و سیستم‌های انرژی پاک را ارائه می‌دهد. تیم ما با تجربه و تضمین کیفیت همراه شماست.</p>
+    </section>
+
+    <section id="contact">
+      <h3>تماس با ما</h3>
+      <div class="card" style="padding:10px">
+        <div class="contact-row"><div>آدرس</div><div class="muted">سنندج، حاجی‌آباد، ظفریه</div></div>
+        <div class="contact-row" style="margin-top:8px"><div>تلفن / واتساپ</div><div><a style="color:var(--gold);text-decoration:none;font-weight:700" href="https://wa.me/989185229269">09185229269</a></div></div>
+        <div class="contact-row" style="margin-top:8px"><div>اینستاگرام</div><div class="muted"><a href="https://instagram.com/soran.mall_building" target="_blank" style="color:var(--muted);text-decoration:none">@soran.mall_building</a></div></div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <div>© سوران مال — Soran Mall Building</div>
+        <div class="muted">سایت رسمی: soranmall.ir</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
