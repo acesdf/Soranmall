@@ -175,7 +175,75 @@ footer {
 }
 
 </style>
+  /* ===== Header Layout ===== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-logo {
+  width: 150px;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  color: #d4af37;
+  cursor: pointer;
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: #eee;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #d4af37;
+}
+
+/* ===== Mobile Style ===== */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #1f0f35;
+    padding: 1rem;
+    border-top: 1px solid rgba(212,175,55,0.3);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+  }
+}
+
 </head>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
 
 <body>
 
