@@ -1,189 +1,270 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سوران مال | پروژه‌های ساختمانی و صنعتی</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سوران مال | پروژه‌های ساختمانی و صنعتی</title>
 
-  <!-- فونت و Swiper -->
-  <link href="https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/font-face.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/font-face.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-  <style>
-    body {
-      font-family: "Vazir", sans-serif;
-      margin: 0;
-      background-color: #0b1a2b; /* آبی نفتی */
-      color: #fff;
-      direction: rtl;
-    }
+<style>
 
-    a { text-decoration: none; color: inherit; }
+body {
+  font-family: "Vazir", sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #1a0f2e, #2b124c);
+  color: #f5f5f5;
+  direction: rtl;
+}
 
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, #5b1a4d, #0d3b6d); /* بنفش تیره + آبی */
-      text-align: center;
-      padding: 2rem 1rem;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    }
-    header h1 { margin: 0; font-size: 2rem; color: #ffd700; /* طلایی */ }
-    header p { margin-top: .5rem; opacity: 0.8; }
+header {
+  background: linear-gradient(135deg, #2b124c, #1a0f2e);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid #d4af37;
+}
 
-    /* NAV */
-    nav {
-      background: #0d3b6d;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: .8rem 0;
-    }
-    nav a { font-weight: bold; transition: color 0.2s ease; }
-    nav a:hover { color: #ffd700; }
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #d4af37;
+}
 
-    /* HERO */
-    .hero {
-      background: url("https://images.unsplash.com/photo-1596079890746-0d8271c5d22f?auto=format&fit=crop&w=1600&q=80") center/cover;
-      color: white;
-      text-align: center;
-      padding: 6rem 1rem;
-    }
-    .hero h2 {
-      background: rgba(0,0,0,0.6);
-      display: inline-block;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-    }
+nav {
+  background: #1f0f35;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+}
 
-    /* SECTIONS */
-    section { padding: 3rem 1rem; max-width: 1200px; margin: auto; }
-    h2 { color: #ffd700; text-align: center; margin-bottom: 2rem; }
+nav a {
+  font-weight: bold;
+  color: #eee;
+  text-decoration: none;
+}
 
-    /* SERVICES */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #1b2b44;
-      border-radius: 15px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card:hover { transform: translateY(-5px); }
+nav a:hover {
+  color: #d4af37;
+}
 
-    /* PROJECTS - Swiper */
-    .swiper { width: 100%; height: 500px; margin-bottom: 3rem; border-radius: 10px; overflow: hidden; }
-    .swiper-slide { display: flex; align-items: center; justify-content: center; background: #000; }
-    .swiper-slide img, .swiper-slide video { width: 100%; height: 100%; object-fit: cover; }
-    .swiper-button-next, .swiper-button-prev { color: #ffd700 !important; }
-    .swiper-pagination-bullet { background: #ffd700 !important; }
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  background: #23123d;
+}
 
-    /* CONTACT */
-    .contact { text-align: center; margin-top: 3rem; }
-    .contact a { color: #ffd700; font-weight: bold; }
+h2, h3 {
+  color: #d4af37;
+  text-align: center;
+}
 
-    /* FOOTER */
-    footer {
-      background: #0d3b6d;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
+section {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
-  </style>
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #23123d;
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.2);
+}
+
+.swiper {
+  width: 100%;
+  height: 400px;
+  margin: 2rem 0;
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.swiper-slide img,
+.swiper-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #d4af37 !important;
+}
+
+.swiper-pagination-bullet {
+  background: #d4af37 !important;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background: #1f0f35;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid rgba(212,175,55,0.3);
+}
+
+/* Floating WhatsApp */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #1a0f2e;
+  font-size: 26px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(212,175,55,0.5);
+  z-index: 999;
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>شرکت سوران مال</h1>
-  <p>طراحی و اجرای پروژه‌های ساختمانی، صنعتی و پنل خورشیدی</p>
+<h1>شرکت سوران مال</h1>
+<p>طراحی و اجرای پروژه‌های ساختمانی، صنعتی و پنل خورشیدی</p>
 </header>
 
 <nav>
-  <a href="#about">درباره ما</a>
-  <a href="#services">خدمات</a>
-  <a href="#projects">پروژه‌ها</a>
-  <a href="#contact">تماس با ما</a>
+<a href="#services">خدمات</a>
+<a href="#projects">پروژه‌ها</a>
+<a href="#contact">تماس با ما</a>
 </nav>
 
-<div class="hero">
-  <h2>پروژه‌های بزرگ، کیفیت ماندگار، اجرای دقیق</h2>
-</div>
-
-<section id="about">
-  <h2>درباره شرکت سوران مال</h2>
-  <p style="text-align:center; line-height:2;">
-    شرکت سوران مال با بهره‌گیری از مهندسین مجرب، در زمینه طراحی و اجرای پروژه‌های ساختمانی، صنعتی و سیستم‌های پنل خورشیدی فعالیت دارد.
-    ارائه مشاوره، برآورد هزینه و تأمین مصالح با کیفیت بالا از خدمات ماست.
-  </p>
+<section class="hero">
+<h2>اجرای حرفه‌ای پروژه‌های ساختمانی و صنعتی</h2>
 </section>
 
 <section id="services">
-  <h2>خدمات ما</h2>
-  <div class="services">
-    <div class="card">
-      <h3>پروژه‌های ساختمانی</h3>
-      <p>طراحی، نظارت و اجرای کامل ساختمان‌های مسکونی و اداری.</p>
-    </div>
-    <div class="card">
-      <h3>پروژه‌های صنعتی</h3>
-      <p>ساخت سوله‌ها و کارخانه‌ها با استانداردهای روز دنیا.</p>
-    </div>
-    <div class="card">
-      <h3>پنل‌های خورشیدی</h3>
-      <p>نصب و راه‌اندازی سیستم‌های خورشیدی خانگی و صنعتی.</p>
-    </div>
-    <div class="card">
-      <h3>تأمین مصالح</h3>
-      <p>تأمین مصالح و تجهیزات با کیفیت و استاندارد بین‌المللی.</p>
-    </div>
-  </div>
+<h2>خدمات ما</h2>
+<div class="services">
+<div class="card">
+<h3>پروژه‌های ساختمانی</h3>
+<p>طراحی و اجرای کامل ساختمان‌های مسکونی و تجاری</p>
+</div>
+
+<div class="card">
+<h3>پروژه‌های صنعتی</h3>
+<p>ساخت و اجرای پروژه‌های صنعتی و سوله</p>
+</div>
+
+<div class="card">
+<h3>پنل خورشیدی</h3>
+<p>نصب و راه‌اندازی سیستم‌های خورشیدی</p>
+</div>
+
+<div class="card">
+<h3>تأمین مصالح</h3>
+<p>تأمین مصالح ساختمانی و صنعتی با کیفیت</p>
+</div>
+</div>
 </section>
 
 <section id="projects">
-  <h2>نمونه پروژه‌ها</h2>
+<h2>نمونه پروژه‌ها</h2>
 
-  <!-- دسته‌بندی پروژه‌ها -->
-  <h3 style="color:#ffd700; text-align:center; margin-bottom:1rem;">پروژه‌های ساختمانی</h3>
-  <div class="swiper mySwiperBuilding">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="project-building1.jpg" alt="ساختمانی 1"></div>
-      <div class="swiper-slide"><img src="project-building2.jpg" alt="ساختمانی 2"></div>
-      <div class="swiper-slide"><video controls><source src="project-building-video.mp4" type="video/mp4"></video></div>
-      <!-- افزودن پروژه‌های بیشتر به راحتی -->
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </div>
+<div class="swiper mySwiper">
+<div class="swiper-wrapper">
 
-  <h3 style="color:#ffd700; text-align:center; margin-bottom:1rem;">پروژه‌های صنعتی</h3>
-  <div class="swiper mySwiperIndustrial">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="project-industrial1.jpg" alt="صنعتی 1"></div>
-      <div class="swiper-slide"><img src="project-industrial2.jpg" alt="صنعتی 2"></div>
-      <div class="swiper-slide"><video controls><source src="project-industrial-video.mp4" type="video/mp4"></video></div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </div>
+<div class="swiper-slide">
+<img src="media/project1.jpg">
+</div>
 
-  <h3 style="color:#ffd700; text-align:center; margin-bottom:1rem;">پروژه‌های پنل خورشیدی</h3>
-  <div class="swiper mySwiperSolar">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="project-solar1.jpg" alt="خورشیدی 1"></div>
-      <div class="swiper-slide"><img src="project-solar2.jpg" alt="خورشیدی 2"></div>
-      <div class="swiper-slide"><video controls><source src="project-solar-video.mp4" type="video/mp4"></video></div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </div>
+<div class="swiper-slide">
+<img src="media/project2.jpg">
+</div>
+
+<div class="swiper-slide">
+<video controls>
+<source src="media/video1.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
 
 </section>
 
-<section id="
+<section id="contact" class="contact">
+<h2>تماس با ما</h2>
+
+<p>
+<i class="fas fa-phone"></i>
+<a href="tel:09185229269">0918 522 9269</a>
+</p>
+
+<p>
+<i class="fas fa-envelope"></i>
+<a href="mailto:Soranmall.buildings@gmail.com">
+Soranmall.buildings@gmail.com
+</a>
+</p>
+
+</section>
+
+<footer>
+© 2026 سوران مال - تمامی حقوق محفوظ است
+</footer>
+
+<a href="https://wa.me/989185229269" 
+class="floating-whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+new Swiper(".mySwiper", {
+loop: true,
+autoplay: {
+delay: 3000,
+disableOnInteraction: false,
+},
+pagination: {
+el: ".swiper-pagination",
+clickable: true,
+},
+navigation: {
+nextEl: ".swiper-button-next",
+prevEl: ".swiper-button-prev",
+},
+});
+</script>
+
+</body>
+</html>
