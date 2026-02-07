@@ -26,6 +26,32 @@ header {
   border-bottom: 2px solid #d4af37;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-logo {
+  width: 260px;
+  max-width: 85%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.5);
+  transition: 0.3s;
+}
+
+.main-logo:hover {
+  transform: scale(1.03);
+}
+
+.header-text {
+  margin-top: 15px;
+  color: #d4af37;
+  font-size: 1.1rem;
+}
+
+
 header h1 {
   margin: 0;
   font-size: 2rem;
@@ -154,8 +180,12 @@ footer {
 <body>
 
 <header>
-<h1>شرکت سوران مال</h1>
-<p>طراحی و اجرای پروژه‌های ساختمانی، صنعتی و پنل خورشیدی</p>
+  <div class="logo-container">
+    <img src="media/logo.jpg" alt="لوگو سوران مال" class="main-logo">
+  </div>
+  <p class="header-text">
+    طراحی و اجرای پروژه‌های ساختمانی، صنعتی و پنل خورشیدی
+  </p>
 </header>
 
 <nav>
