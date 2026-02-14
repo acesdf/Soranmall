@@ -3,147 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soran Mall | سوران مال</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>سهران مال | SORAN MALL</title>
     <style>
-        :root {
-            --primary: #1a1a1a;
-            --accent: #d4af37; /* طلایی لوکس برای دکوراسیون */
-            --text-gray: #f8f9fa;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            /* طیف رنگی آبی نفتی تیره به بنفش عمیق */
+            background: linear-gradient(135deg, #001f3f 0%, #1a0033 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tahoma', 'Arial', sans-serif; }
-        body { background-color: #ffffff; line-height: 1.8; color: #333; }
+        .container {
+            padding: 40px 20px;
+            max-width: 900px;
+        }
 
-        /* --- منوی همبرگری --- */
-        .header { background: var(--primary); color: white; padding: 15px 25px; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .menu-icon { font-size: 24px; cursor: pointer; color: var(--accent); }
-        .side-nav { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: var(--primary); transition: 0.4s; padding-top: 80px; z-index: 999; box-shadow: -5px 0 15px rgba(0,0,0,0.5); }
-        .side-nav a { display: block; padding: 15px 30px; color: white; text-decoration: none; border-bottom: 1px solid #333; font-size: 14px; }
-        .side-nav a:hover { background: var(--accent); color: #000; }
+        /* سرتیتر بسیار بالاتر و بازتر */
+        .top-header {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
 
-        /* --- بخش اصلی معرفی --- */
-        .hero { margin-top: 60px; padding: 80px 20px; background: linear-gradient(45deg, #1a1a1a, #333); color: white; text-align: center; }
-        .hero h1 { color: var(--accent); font-size: 2.5rem; margin-bottom: 15px; }
+        /* سهران مال - بزرگ و با رنگ طلایی براق */
+        .brand-name {
+            font-size: 5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            /* افکت طلایی براق */
+            background: linear-gradient(to bottom, #cf9911 0%, #f9e17d 50%, #b38500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 4px 10px rgba(255, 215, 0, 0.3));
+            text-transform: uppercase;
+        }
 
-        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        .sub-title {
+            font-size: 1.8rem;
+            color: #ffd700; /* طلایی ساده برای خوانایی */
+            margin-bottom: 30px;
+        }
 
-        /* --- لیست خدمات کلی (بدون تفکیک گیج‌کننده) --- */
-        .main-services { background: #f9f9f9; border-radius: 15px; padding: 30px; border-right: 5px solid var(--accent); margin-bottom: 40px; }
-        .service-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-        .service-item { display: flex; align-items: center; font-weight: bold; }
-        .service-item i { color: var(--accent); margin-left: 10px; }
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #d1d1d1;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+        }
 
-        /* --- بخش‌های تفکیکی گالری --- */
-        .gallery-sectors { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .sector-card { background: var(--primary); color: white; padding: 40px 20px; text-align: center; border-radius: 12px; cursor: pointer; transition: 0.3s; text-decoration: none; border: 1px solid var(--accent); }
-        .sector-card:hover { transform: translateY(-10px); background: #333; }
-        .sector-card i { font-size: 3rem; color: var(--accent); margin-bottom: 15px; }
+        /* دکمه تلگرام اصلاح شده */
+        .telegram-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #0088cc, #00aaff);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+        }
 
-        /* --- دکمه‌های تماس و شبکه اجتماعی --- */
-        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 40px; }
-        .btn-contact { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
-        .btn-call { background: #2ecc71; } .btn-sms { background: #3498db; } .btn-wa { background: #25d366; }
-        .btn-tele { background: #0088cc; } .btn-insta { background: #e1306c; } .btn-yt { background: #ff0000; }
-        .btn-contact:hover { opacity: 0.8; transform: scale(1.05); }
-        .btn-contact i { font-size: 1.8rem; margin-bottom: 8px; }
+        .telegram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
+        }
 
-        @media (max-width: 768px) { .gallery-sectors { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+        .highlight {
+            color: #f9e17d;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="menu-icon" onclick="openNav()"><i class="fas fa-bars"></i></div>
-        <div style="font-weight: bold; letter-spacing: 1px;">SORAN MALL</div>
-    </header>
-
-    <div id="mySidenav" class="side-nav">
-        <a href="javascript:void(0)" onclick="closeNav()" style="font-size: 30px; text-align: left;">&times;</a>
-        <a href="#">صفحه اصلی</a>
-        <a href="#all-services">خدمات صفر تا صد ساختمان</a>
-        <a href="#gallery">نمونه کارها و پروژه‌ها</a>
-        <a href="#contact">ارتباط با مدیریت</a>
-    </div>
-
-    <section class="hero">
-        <h1>مجموعه فنی و مهندسی سوران مال</h1>
-        <p>صفر تا صد طراحی، اجرا، بازسازی و تأمین مصالح ساختمان</p>
-    </section>
-
     <div class="container">
-        
-        <div class="main-services" id="all-services">
-            <h2 style="margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">خدمات اجرایی ما</h2>
-            <p>ما تمامی مراحل ساخت و نازک‌کاری را با تیم متخصص انجام می‌دهیم:</p>
-            <div class="service-list">
-                <div class="service-item"><i class="fas fa-check-circle"></i> برق‌کاری ساختمان</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> لوله‌کشی آب و فاضلاب</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> گازکشی و تأسیسات</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> کناف و سقف کاذب</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> نورپردازی حرفه‌ای</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> کاغذ دیواری و نقاشی</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> گچ‌کاری و جوشکاری</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> ساخت بنا و سفت‌کاری</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> ام‌دی‌اف و دکوراسیون</div>
-                <div class="service-item"><i class="fas fa-check-circle"></i> پی‌وی‌سی (PVC)</div>
-            </div>
+        <div class="top-header">
+            مجتمع تخصصی صفر تا صد ساختمان، صنعت و انرژی‌های تجدیدپذیر
         </div>
 
-        <h2 style="text-align: center; margin: 40px 0 20px;" id="gallery">آلبوم پروژه‌ها (فیلم و نمونه‌کار)</h2>
-        <div class="gallery-sectors">
-            <a href="#" class="sector-card">
-                <i class="fas fa-elevator"></i>
-                <h3>آسانسور، امنیت و انرژی</h3>
-                <p>دوربین مداربسته، پنل خورشیدی و درب‌های اتوماتیک</p>
-            </a>
-            <a href="#" class="sector-card">
-                <i class="fas fa-home"></i>
-                <h3>بازسازی و دکوراسیون داخلی</h3>
-                <p>نمونه کارهای قبل و بعد، طراحی داخلی و چیدمان</p>
-            </a>
+        <h1 class="brand-name">سهران مال</h1>
+        <div class="sub-title">SORAN MALL</div>
+
+        <div class="description">
+            پیشرو در ارائه خدمات <span class="highlight">تجهیزات صنعتی، ساختمانی</span> 
+            <br> 
+            و احداث <span class="highlight">نیروگاه‌های فتوولتائیک و پنل‌های خورشیدی</span>
         </div>
 
-        <h2 style="text-align: center; margin-top: 60px;" id="contact">ارتباط مستقیم و مشاوره (کلیک کنید)</h2>
-        <div class="contact-grid">
-            <a href="tel:09185229269" class="btn-contact btn-call">
-                <i class="fas fa-phone"></i> تماس تلفنی
-            </a>
-            <a href="sms:09185229269" class="btn-contact btn-sms">
-                <i class="fas fa-sms"></i> پیامک
-            </a>
-            <a href="https://wa.me/989185229269" class="btn-contact btn-wa">
-                <i class="fab fa-whatsapp"></i> واتس‌اپ
-            </a>
-            <a href="https://t.me/soran_mall_admin" class="btn-contact btn-tele">
-                <i class="fab fa-telegram"></i> تلگرام
-            </a>
-            <a href="https://instagram.com/soran.mall" class="btn-contact btn-insta">
-                <i class="fab fa-instagram"></i> اینستاگرام
-            </a>
-            <a href="https://youtube.com/@soran_mall" class="btn-contact btn-yt">
-                <i class="fab fa-youtube"></i> یوتیوب
-            </a>
-        </div>
-
+        <a href="https://t.me/SORANMALL" class="telegram-btn" target="_blank">
+            ورود به کانال تلگرام
+        </a>
     </div>
 
-    <footer style="background:#1a1a1a; color:white; text-align:center; padding:30px; margin-top:50px;">
-        <p>تمامی حقوق برای سوران مال محفوظ است</p>
-    </footer>
-
-    <script>
-        function openNav() { document.getElementById("mySidenav").style.right = "0"; }
-        function closeNav() { document.getElementById("mySidenav").style.right = "-280px"; }
-        
-        // بستن منو با کلیک بیرون از آن
-        document.addEventListener('click', function(event) {
-            const sideNav = document.getElementById("mySidenav");
-            const menuIcon = document.querySelector('.menu-icon');
-            if (!sideNav.contains(event.target) && !menuIcon.contains(event.target)) {
-                closeNav();
-            }
-        });
-    </script>
 </body>
 </html>
