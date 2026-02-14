@@ -1,374 +1,149 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سوران مال | پروژه‌های ساختمانی و صنعتی</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soran Mall | سوران مال</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #d4af37; /* طلایی لوکس برای دکوراسیون */
+            --text-gray: #f8f9fa;
+        }
 
-<link href="https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/font-face.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tahoma', 'Arial', sans-serif; }
+        body { background-color: #ffffff; line-height: 1.8; color: #333; }
 
-<style>
+        /* --- منوی همبرگری --- */
+        .header { background: var(--primary); color: white; padding: 15px 25px; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .menu-icon { font-size: 24px; cursor: pointer; color: var(--accent); }
+        .side-nav { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: var(--primary); transition: 0.4s; padding-top: 80px; z-index: 999; box-shadow: -5px 0 15px rgba(0,0,0,0.5); }
+        .side-nav a { display: block; padding: 15px 30px; color: white; text-decoration: none; border-bottom: 1px solid #333; font-size: 14px; }
+        .side-nav a:hover { background: var(--accent); color: #000; }
 
-body {
-  font-family: "Vazir", sans-serif;
-  margin: 0;
-  background: linear-gradient(135deg, #1a0f2e, #2b124c);
-  color: #f5f5f5;
-  direction: rtl;
-}
+        /* --- بخش اصلی معرفی --- */
+        .hero { margin-top: 60px; padding: 80px 20px; background: linear-gradient(45deg, #1a1a1a, #333); color: white; text-align: center; }
+        .hero h1 { color: var(--accent); font-size: 2.5rem; margin-bottom: 15px; }
 
-header {
-  background: linear-gradient(135deg, #2b124c, #1a0f2e);
-  text-align: center;
-  padding: 2rem 1rem;
-  border-bottom: 2px solid #d4af37;
-}
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+        /* --- لیست خدمات کلی (بدون تفکیک گیج‌کننده) --- */
+        .main-services { background: #f9f9f9; border-radius: 15px; padding: 30px; border-right: 5px solid var(--accent); margin-bottom: 40px; }
+        .service-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .service-item { display: flex; align-items: center; font-weight: bold; }
+        .service-item i { color: var(--accent); margin-left: 10px; }
 
-.main-logo {
-  width: 260px;
-  max-width: 85%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(212,175,55,0.5);
-  transition: 0.3s;
-}
+        /* --- بخش‌های تفکیکی گالری --- */
+        .gallery-sectors { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .sector-card { background: var(--primary); color: white; padding: 40px 20px; text-align: center; border-radius: 12px; cursor: pointer; transition: 0.3s; text-decoration: none; border: 1px solid var(--accent); }
+        .sector-card:hover { transform: translateY(-10px); background: #333; }
+        .sector-card i { font-size: 3rem; color: var(--accent); margin-bottom: 15px; }
 
-.main-logo:hover {
-  transform: scale(1.03);
-}
+        /* --- دکمه‌های تماس و شبکه اجتماعی --- */
+        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 40px; }
+        .btn-contact { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
+        .btn-call { background: #2ecc71; } .btn-sms { background: #3498db; } .btn-wa { background: #25d366; }
+        .btn-tele { background: #0088cc; } .btn-insta { background: #e1306c; } .btn-yt { background: #ff0000; }
+        .btn-contact:hover { opacity: 0.8; transform: scale(1.05); }
+        .btn-contact i { font-size: 1.8rem; margin-bottom: 8px; }
 
-.header-text {
-  margin-top: 15px;
-  color: #d4af37;
-  font-size: 1.1rem;
-}
-
-
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-  color: #d4af37;
-}
-
-nav {
-  background: #1f0f35;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: .8rem 0;
-  border-bottom: 1px solid rgba(212,175,55,0.3);
-}
-
-nav a {
-  font-weight: bold;
-  color: #eee;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: #d4af37;
-}
-
-.hero {
-  text-align: center;
-  padding: 5rem 1rem;
-  background: #23123d;
-}
-
-h2, h3 {
-  color: #d4af37;
-  text-align: center;
-}
-
-section {
-  padding: 3rem 1rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: #23123d;
-  border: 1px solid rgba(212,175,55,0.3);
-  border-radius: 15px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(212,175,55,0.2);
-}
-
-.swiper {
-  width: 100%;
-  height: 400px;
-  margin: 2rem 0;
-  border: 1px solid rgba(212,175,55,0.3);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.swiper-slide img,
-.swiper-slide video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #d4af37 !important;
-}
-
-.swiper-pagination-bullet {
-  background: #d4af37 !important;
-}
-
-.contact {
-  text-align: center;
-}
-
-.contact a {
-  color: #d4af37;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer {
-  background: #1f0f35;
-  text-align: center;
-  padding: 1rem;
-  border-top: 1px solid rgba(212,175,55,0.3);
-}
-
-/* Floating WhatsApp */
-.floating-whatsapp {
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-  background: linear-gradient(135deg, #d4af37, #b8962e);
-  color: #1a0f2e;
-  font-size: 26px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 5px 20px rgba(212,175,55,0.5);
-  z-index: 999;
-}
-
-</style>
-  /* ===== Header Layout ===== */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.main-logo {
-  width: 150px;
-}
-
-.menu-toggle {
-  font-size: 26px;
-  color: #d4af37;
-  cursor: pointer;
-  display: none;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem 0;
-}
-
-nav a {
-  color: #eee;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: #d4af37;
-}
-
-/* ===== Mobile Style ===== */
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #1f0f35;
-    padding: 1rem;
-    border-top: 1px solid rgba(212,175,55,0.3);
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav a {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(212,175,55,0.2);
-  }
-}
-
+        @media (max-width: 768px) { .gallery-sectors { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+    </style>
 </head>
-<script>
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav-menu");
-
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-</script>
-
 <body>
 
-<header>
-  <div class="top-bar">
-    <img src="logo.jpg" class="main-logo">
+    <header class="header">
+        <div class="menu-icon" onclick="openNav()"><i class="fas fa-bars"></i></div>
+        <div style="font-weight: bold; letter-spacing: 1px;">SORAN MALL</div>
+    </header>
 
-    <div class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
+    <div id="mySidenav" class="side-nav">
+        <a href="javascript:void(0)" onclick="closeNav()" style="font-size: 30px; text-align: left;">&times;</a>
+        <a href="#">صفحه اصلی</a>
+        <a href="#all-services">خدمات صفر تا صد ساختمان</a>
+        <a href="#gallery">نمونه کارها و پروژه‌ها</a>
+        <a href="#contact">ارتباط با مدیریت</a>
     </div>
-  </div>
 
-  <nav id="nav-menu">
-    <a href="#services">خدمات</a>
-    <a href="#projects">پروژه‌ها</a>
-    <a href="#contact">تماس با ما</a>
-  </nav>
-</header>
-  
-<a href="#services">خدمات</a>
-<a href="#projects">پروژه‌ها</a>
-<a href="#contact">تماس با ما</a>
-</nav>
+    <section class="hero">
+        <h1>مجموعه فنی و مهندسی سوران مال</h1>
+        <p>صفر تا صد طراحی، اجرا، بازسازی و تأمین مصالح ساختمان</p>
+    </section>
 
-<section class="hero">
-<h2>اجرای حرفه‌ای پروژه‌های ساختمانی و صنعتی</h2>
-</section>
+    <div class="container">
+        
+        <div class="main-services" id="all-services">
+            <h2 style="margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">خدمات اجرایی ما</h2>
+            <p>ما تمامی مراحل ساخت و نازک‌کاری را با تیم متخصص انجام می‌دهیم:</p>
+            <div class="service-list">
+                <div class="service-item"><i class="fas fa-check-circle"></i> برق‌کاری ساختمان</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> لوله‌کشی آب و فاضلاب</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> گازکشی و تأسیسات</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> کناف و سقف کاذب</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> نورپردازی حرفه‌ای</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> کاغذ دیواری و نقاشی</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> گچ‌کاری و جوشکاری</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> ساخت بنا و سفت‌کاری</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> ام‌دی‌اف و دکوراسیون</div>
+                <div class="service-item"><i class="fas fa-check-circle"></i> پی‌وی‌سی (PVC)</div>
+            </div>
+        </div>
 
-<section id="services">
-<h2>خدمات ما</h2>
-<div class="services">
-<div class="card">
-<h3>پروژه‌های ساختمانی</h3>
-<p>طراحی و اجرای کامل ساختمان‌های مسکونی و تجاری</p>
-</div>
+        <h2 style="text-align: center; margin: 40px 0 20px;" id="gallery">آلبوم پروژه‌ها (فیلم و نمونه‌کار)</h2>
+        <div class="gallery-sectors">
+            <a href="#" class="sector-card">
+                <i class="fas fa-elevator"></i>
+                <h3>آسانسور، امنیت و انرژی</h3>
+                <p>دوربین مداربسته، پنل خورشیدی و درب‌های اتوماتیک</p>
+            </a>
+            <a href="#" class="sector-card">
+                <i class="fas fa-home"></i>
+                <h3>بازسازی و دکوراسیون داخلی</h3>
+                <p>نمونه کارهای قبل و بعد، طراحی داخلی و چیدمان</p>
+            </a>
+        </div>
 
-<div class="card">
-<h3>پروژه‌های صنعتی</h3>
-<p>ساخت و اجرای پروژه‌های صنعتی و سوله</p>
-</div>
+        <h2 style="text-align: center; margin-top: 60px;" id="contact">ارتباط مستقیم و مشاوره (کلیک کنید)</h2>
+        <div class="contact-grid">
+            <a href="tel:09185229269" class="btn-contact btn-call">
+                <i class="fas fa-phone"></i> تماس تلفنی
+            </a>
+            <a href="sms:09185229269" class="btn-contact btn-sms">
+                <i class="fas fa-sms"></i> پیامک
+            </a>
+            <a href="https://wa.me/989185229269" class="btn-contact btn-wa">
+                <i class="fab fa-whatsapp"></i> واتس‌اپ
+            </a>
+            <a href="https://t.me/soran_mall_admin" class="btn-contact btn-tele">
+                <i class="fab fa-telegram"></i> تلگرام
+            </a>
+            <a href="https://instagram.com/soran.mall" class="btn-contact btn-insta">
+                <i class="fab fa-instagram"></i> اینستاگرام
+            </a>
+            <a href="https://youtube.com/@soran_mall" class="btn-contact btn-yt">
+                <i class="fab fa-youtube"></i> یوتیوب
+            </a>
+        </div>
 
-<div class="card">
-<h3>پنل خورشیدی</h3>
-<p>نصب و راه‌اندازی سیستم‌های خورشیدی</p>
-</div>
+    </div>
 
-<div class="card">
-<h3>تأمین مصالح</h3>
-<p>تأمین مصالح ساختمانی و صنعتی با کیفیت</p>
-</div>
-</div>
-</section>
+    <footer style="background:#1a1a1a; color:white; text-align:center; padding:30px; margin-top:50px;">
+        <p>تمامی حقوق برای سوران مال محفوظ است</p>
+    </footer>
 
-<section id="projects">
-<h2>نمونه پروژه‌ها</h2>
-
-<div class="swiper mySwiper">
-<div class="swiper-wrapper">
-
-<div class="swiper-slide">
-<img src="media/project1.jpg">
-</div>
-
-<div class="swiper-slide">
-<img src="media/project2.jpg">
-</div>
-
-<div class="swiper-slide">
-<video controls>
-<source src="media/video1.mp4" type="video/mp4">
-</video>
-</div>
-
-</div>
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-pagination"></div>
-</div>
-
-</section>
-
-<section id="contact" class="contact">
-<h2>تماس با ما</h2>
-
-<p>
-<i class="fas fa-phone"></i>
-<a href="tel:09185229269">0918 522 9269</a>
-</p>
-
-<p>
-<i class="fas fa-envelope"></i>
-<a href="mailto:Soranmall.buildings@gmail.com">
-Soranmall.buildings@gmail.com
-</a>
-</p>
-
-</section>
-
-<footer>
-© 2026 سوران مال - تمامی حقوق محفوظ است
-</footer>
-
-<a href="https://wa.me/989185229269" 
-class="floating-whatsapp" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-new Swiper(".mySwiper", {
-loop: true,
-autoplay: {
-delay: 3000,
-disableOnInteraction: false,
-},
-pagination: {
-el: ".swiper-pagination",
-clickable: true,
-},
-navigation: {
-nextEl: ".swiper-button-next",
-prevEl: ".swiper-button-prev",
-},
-});
-</script>
-
+    <script>
+        function openNav() { document.getElementById("mySidenav").style.right = "0"; }
+        function closeNav() { document.getElementById("mySidenav").style.right = "-280px"; }
+        
+        // بستن منو با کلیک بیرون از آن
+        document.addEventListener('click', function(event) {
+            const sideNav = document.getElementById("mySidenav");
+            const menuIcon = document.querySelector('.menu-icon');
+            if (!sideNav.contains(event.target) && !menuIcon.contains(event.target)) {
+                closeNav();
+            }
+        });
+    </script>
 </body>
 </html>
